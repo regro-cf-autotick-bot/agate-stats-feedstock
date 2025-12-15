@@ -1,18 +1,18 @@
 {% set name = "agate-stats" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/agate-stats-{{ version }}.tar.gz
-  sha256: 9e5455d57d2bb0f24a4e48dce1332f2f6e0cd78e519aa6da0cd329880a52193e
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: d93d919774e1655ada54cf7bf096f39d0522d4eb6eb569cf3896533226927b9a
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
